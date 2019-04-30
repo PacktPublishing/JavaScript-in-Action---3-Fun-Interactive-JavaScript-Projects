@@ -1,0 +1,79 @@
+<html><head><title>JavaScript</title>
+<style>
+.content {
+margin-top: 10px;
+    display: none;
+    padding:20px;
+    font-size:0.8em;
+    border: 1px solid #ddd;
+}
+.main{
+margin-top: 10px;
+    font-size:1.5em;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px;
+}
+.active{
+    display: block;
+}
+</style>
+</head><body>
+<div class="main">1 Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">22 dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">2 Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">333 olor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">3 444 dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">4 Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<script>
+const mainEle = document.querySelectorAll(".main");
+const conEle = document.querySelectorAll(".content");
+for(let x=0;x<mainEle.length;x++){
+    mainEle[x].addEventListener("click",function(){
+        console.log(mainEle[x].nextElementSibling);
+        clearActive();
+        mainEle[x].nextElementSibling.classList.add("active");
+    })
+}
+
+function clearActive(){
+    for(let x=0;x<conEle.length;x++){
+        conEle[x].classList.remove("active");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body></html>

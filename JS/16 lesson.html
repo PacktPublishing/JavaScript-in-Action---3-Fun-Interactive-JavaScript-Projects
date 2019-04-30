@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <style>
+        .tooltip {
+            color: blue;
+            background-color: #ddd;
+        }
+        
+        .output {
+            display: none;
+            position: absolute;
+            border: 1px solid red;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            top: 100px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello World welcome to <span class="tooltip" data-toolContent="Tool Tip Content">JavaScript </span>Course</p>
+    <div>Just another tool tip with some random content like Hello World all part of the <span class="tooltip" data-toolContent="JavaScript">JavaScript </span>Course</div>
+    <div class="output"></div>
+    <script>
+        const tooltips = document.querySelectorAll(".tooltip");
+        const output = document.querySelector(".output");
+        let myInterval;
+        for (let i = 0; i < tooltips.length; i++) {
+            tooltips[i].addEventListener("mouseover", function (e) {
+                let holder = this.getAttribute("data-toolContent");
+                clearInterval(myInterval);
+                console.log(e.clientX);
+                console.log(e.clientY);
+                output.style.display = "block";
+                output.style.top = e.clientY + 5 + "px";
+                output.style.left = e.clientX + 5 + "px";
+                output.innerHTML = holder;
+                myInterval = setInterval(function () {
+                    output.style.display = "none";
+                }, 3000);
+            })
+            tooltips[i].addEventListener("mouseout", function (e) {
+                output.style.display = "none";
+            })
+        }
+    </script>
+</body>
+
+</html>

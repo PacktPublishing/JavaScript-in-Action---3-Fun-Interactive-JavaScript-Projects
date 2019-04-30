@@ -1,0 +1,68 @@
+<html><head><title>JavaScript</title>
+<style>
+.content {
+    display: none;
+    padding:20px;
+    font-size:0.8em;
+    border: 1px solid black;
+}
+.main{
+    font-size:1.5em;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.active{
+    display: block;
+}
+</style>
+</head><body>
+<div class="main">Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">22 dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">333 olor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">444 dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<div class="main">Lorem ipsum dolor sit amet consectetuer adipiscing 
+elit</div>
+<div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</div>
+<script>
+const mainEle = document.querySelectorAll(".main");
+const conEle = document.querySelectorAll(".content");
+for(let x=0;x<mainEle.length;x++){
+    mainEle[x].addEventListener("click",function(){
+        console.log(mainEle[x].nextElementSibling);
+        mainEle[x].nextElementSibling.classList.toggle("active");
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body></html>
